@@ -1,0 +1,8 @@
+.prodectDetails .cart-button{
+    background-color: rgba(233, 142, 39, 0.877);
+    border: none;
+}
+.prodectDetails .cart-button:hover{
+     background-color: rgba(223, 126, 15, 0.877);
+     
+}

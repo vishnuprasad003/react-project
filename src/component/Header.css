@@ -1,0 +1,23 @@
+.head-bg{
+    background-color: rgb(56, 175, 244);
+}
+.head-bg .nav-link{
+    color: white;
+}
+.weblogo{
+    width: 40px;
+}
+.head-bg .navbar-nav .nav-link.active{
+    color: rgba(255, 228, 196, 0.773);
+}
+.head-bg .dropdown-menu[data-bs-popper] {
+    left: auto;
+    right: 0px;
+}
+.head-bg .dropdown-toggle{
+    color: black;
+    background-color: white;
+    border-radius: 50%;
+    text-align: center;
+  
+}
