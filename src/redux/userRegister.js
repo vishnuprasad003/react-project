@@ -9,19 +9,25 @@ const userSlice = createSlice({
     },
     reducers:{
         userRegister:(state,action)=>{
-                state.users.push(action.payload)
+                state.users.push(action.payload);
                 localStorage.setItem('users',JSON.stringify(state.users));
         },
         userLogin:(state,action) => {
-            state.user = action.payload
-            state.isAuthentication =  true
+            state.user = action.payload;
+            state.isAuthentication =  true;
 
+            localStorage.setItem('user',JSON.stringify(state.user));
+            localStorage.setItem('isAuthentication',JSON.stringify(state.isAuthentication));
+        },
+        userLogout:(state)=>{
+            state.user = null;
+            state.isAuthentication = false;
             localStorage.setItem('user',JSON.stringify(state.user));
             localStorage.setItem('isAuthentication',JSON.stringify(state.isAuthentication));
         }
     }
 })
-export const {userRegister,userLogin} = userSlice.actions
+export const {userRegister,userLogin,userLogout} = userSlice.actions;
 export default userSlice.reducer;
 
 

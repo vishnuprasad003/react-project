@@ -5,7 +5,7 @@ function ProductDetails({ products }) {
 
     const { id } = useParams();
 
-    const product = products.find((pr) => pr.id === Number(id))
+    const product = products.find((pr) => pr.id === Number(id));
 
     return (
         <Container className="prodectDetails">

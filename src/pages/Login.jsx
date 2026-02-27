@@ -9,13 +9,13 @@ function Login() {
    
     const {isAuthentication}=useSelector((state)=> state.userState);
     const dispatch = useDispatch();
-    const navigate = useNavigate()
-    const [error, setError] = useState({})
-    const [validated, setvalidated] = useState(false)
+    const navigate = useNavigate();
+    const [error, setError] = useState({});
+    const [validated, setvalidated] = useState(false);
     const [logdata, setlogdata] = useState({
         email: "",
         password: ""
-    })
+    });
     function getdata(event) {
         setlogdata((prev) => {
             const updateData = { ...prev, [event.target.name]: event.target.value }
@@ -33,7 +33,7 @@ function Login() {
         if (form.checkValidity() === false) {
 
             event.stopPropagation();
-            setvalidated(true)
+            setvalidated(true);
 
 
             form.querySelectorAll(":invalid").forEach((input) => {
@@ -47,7 +47,7 @@ function Login() {
         }
 
         const users = JSON.parse(localStorage.getItem('users')) || [];
-        const user = users.find((use) => use.email === logdata.email)
+        const user = users.find((use) => use.email === logdata.email);
 
 
         if (!user) {
@@ -58,7 +58,7 @@ function Login() {
             toast.error("Invalid credentials");
             return;
         }
-        dispatch(userLogin(user))
+        dispatch(userLogin(user));
         toast.success("User logged successfully");
         navigate('/');
 

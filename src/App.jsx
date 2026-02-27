@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import {ToastContainer} from "react-toastify"
+import AddProduct from './admin/AddProduct';
 
 
 function App() {
@@ -106,6 +107,8 @@ fetchProdect();
         <Route path='/product/:id' element={<ProductDetails products={products} />} />
         <Route path='/login' element={<Login />}/>
         <Route path='/register' element={<Register />}/>
+        <Route path='/admin/add-product' element={<AddProduct />}/>
+
 
       </Routes>
       <Footer />

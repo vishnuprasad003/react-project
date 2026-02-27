@@ -7,9 +7,9 @@ import { userRegister } from "../redux/userRegister";
 import { useDispatch } from "react-redux";
 function Register() {
     const { Formik } = formik;
-    const naviget = useNavigate()
+    const naviget = useNavigate();
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     const schema = yup.object().shape({
         fullName: yup.string().required("Please enter your name").min(2, "Name must contain at least 2 characters"),
@@ -18,12 +18,12 @@ function Register() {
 
     });
     function handleRegister(values){
-        values.id = Date.now()//this give us date and milisecond
-        values.role = "user"
-        values.status = true
-        dispatch(userRegister(values))
-        toast.success("User registration successfully completed")
-        naviget("/login")
+        values.id = Date.now();//this give us date and milisecond
+        values.role = "user";
+        values.status = true;
+        dispatch(userRegister(values));
+        toast.success("User registration successfully completed");
+        naviget("/login");
     }
     return (
         <>
